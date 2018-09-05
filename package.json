@@ -7,11 +7,11 @@
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.5"
   },
+  "homepage":"https://zhengbigbig.github.io/react-demo-3/build",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "homepage":"https://zhengbigbig.github.io/react-demo-3/build"
+    "eject": "react-scripts eject"
   }
 }
