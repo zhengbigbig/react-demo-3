@@ -90,12 +90,13 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="750" />
     <option name="y" value="125" />
     <option name="width" value="1556" />
     <option name="height" value="973" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -179,15 +180,15 @@
       <updated>1536131126769</updated>
       <workItem from="1536131129714" duration="1982000" />
       <workItem from="1536133781447" duration="898000" />
-      <workItem from="1536134704929" duration="1075000" />
+      <workItem from="1536134704929" duration="1670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3955000" />
+    <option name="totallyTimeSpent" value="4550000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="750" y="125" width="1556" height="973" extended-state="0" />
+    <frame x="750" y="125" width="1556" height="973" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
