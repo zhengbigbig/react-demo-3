@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "normalize.css": "^8.0.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "normalize.css": "^6.0.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
-    "react-scripts": "1.1.5"
+    "react-scripts": "0.9.5"
   },
-  "homepage": "https://zhengbigbig.github.io/react-demo-3/build",
+  "homepage": "https://github.com/zhengbigbig/react-demo-3/build",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -18,3 +18,4 @@
     "eject": "react-scripts eject"
   }
 }
+
