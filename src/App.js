@@ -4,15 +4,20 @@ import 'normalize.css'
 import './reset.css'
 import TodoInput from './TodoInput'
 import TodoItem from './TodoItem'
-import * as localStore from './localStorage'
+import UserDialog from './UserDialog'
+import AV from './leanCloud'
+/*import * as localStore from './localStorage'*/
+
 
 
 class App extends Component {
     constructor(props){
         super(props)
         this.state = {
+            user: {},
             newTodo:'',
-            todoList:localStore.load('todoList') || []
+            // todoList:localStore.load('todoList') || []
+            todoList:[]
         }
     }
     render() {
@@ -27,7 +32,7 @@ class App extends Component {
         })
         return (
           <div className="App">
-              <h1>我的待办</h1>
+              <h1>{this.state.user.username||'我'}的待办</h1>
               <div className="inputWrapper">
                   {/*<input type="text" value={this.state.newTodo}/>*/}
                   <TodoInput content={this.state.newTodo} onChange={this.changeTitle.bind(this)} onSubmit={this.addTodo.bind(this)}/>
@@ -35,11 +40,18 @@ class App extends Component {
               <ol className="todoList">
                   {todos}
               </ol>
+              {/*<UserDialog onSignUp={this.onSignUp.bind(this)}/>*/}
+              {this.state.user.id ? null : <UserDialog onSignUp={this.onSignUp.bind(this)}/>}
           </div>
         );
     }
+    onSignUp(user){
+        let stateCopy = JSON.parse(JSON.stringify(this.state))
+        stateCopy.user = user
+        this.setState(stateCopy)
+    }
     componentDidUpdate(){
-        localStore.save('todoList',this.state.todoList)
+        // localStore.save('todoList',this.state.todoList)
     }
     addTodo(event){
         this.state.todoList.push({
@@ -62,7 +74,6 @@ class App extends Component {
     toggle(e,todo){
         todo.status = todo.status === 'completed' ? '' : 'completed'
         this.setState(this.state)
-        localStore.save('todoList', this.state.todoList)
     }
     delete(event,todo){
         todo.deleted = true
