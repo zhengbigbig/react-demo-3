@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import 'normalize.css'
 import './reset.css'
 import TodoInput from './TodoInput'
 import TodoItem from './TodoItem'
-
+import * as localStore from './localStorage'
 
 
 class App extends Component {
@@ -13,8 +12,7 @@ class App extends Component {
         super(props)
         this.state = {
             newTodo:'',
-            todoList:[
-            ]
+            todoList:localStore.load('todoList') || []
         }
     }
     render() {
@@ -40,6 +38,9 @@ class App extends Component {
           </div>
         );
     }
+    componentDidUpdate(){
+        localStore.save('todoList',this.state.todoList)
+    }
     addTodo(event){
         this.state.todoList.push({
             id:idMaker(),
@@ -61,6 +62,7 @@ class App extends Component {
     toggle(e,todo){
         todo.status = todo.status === 'completed' ? '' : 'completed'
         this.setState(this.state)
+        localStore.save('todoList', this.state.todoList)
     }
     delete(event,todo){
         todo.deleted = true
